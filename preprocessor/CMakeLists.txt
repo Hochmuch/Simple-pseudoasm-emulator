@@ -1,0 +1,2 @@
+add_library(preprocessor preprocessor.cpp)
+target_link_libraries(preprocessor parser)

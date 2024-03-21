@@ -1,0 +1,238 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "stack",
+					"jsonFile" : "directory-stack-Debug-c50bba7e2e65c9bfb5d8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "stack",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "emulator",
+					"jsonFile" : "directory-emulator-Debug-bb256c0437f2ea28b73d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "emulator",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "parser",
+					"jsonFile" : "directory-parser-Debug-839dcc71fbf93c3ec63f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "parser",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "preprocessor",
+					"jsonFile" : "directory-preprocessor-Debug-926c81322313a7161d76.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "preprocessor",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "commands",
+					"jsonFile" : "directory-commands-Debug-6b103cb0dbe5299c73bd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "commands",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "memory",
+					"jsonFile" : "directory-memory-Debug-5dd7eb2c77d476a03b5f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "memory",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "exceptions",
+					"jsonFile" : "directory-exceptions-Debug-4e256aef12f920d1087c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "exceptions",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "emulator2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "commands::@f2315f53a35462b60184",
+					"jsonFile" : "target-commands-Debug-fa80e25372eb11d3247d.json",
+					"name" : "commands",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "emulator::@1c3256c8de4e75002d5e",
+					"jsonFile" : "target-emulator-Debug-e3545da683e9aa68234b.json",
+					"name" : "emulator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "emulator2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-emulator2-Debug-df40bb5d5e0008efa71f.json",
+					"name" : "emulator2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "exceptions::@700f973e09830aaf1ab5",
+					"jsonFile" : "target-exceptions-Debug-5f118d47216ae2ebdc53.json",
+					"name" : "exceptions",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "memory::@d5056488c8308e14ee1a",
+					"jsonFile" : "target-memory-Debug-8b424e83253e7aa07283.json",
+					"name" : "memory",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "parser::@72798c8d109b1720528b",
+					"jsonFile" : "target-parser-Debug-08902a6421a21ef9c150.json",
+					"name" : "parser",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "preprocessor::@c23dcddcd32562936270",
+					"jsonFile" : "target-preprocessor-Debug-9b6b136ebcb6b2ffc938.json",
+					"name" : "preprocessor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "stack::@b5371760465ddb38638a",
+					"jsonFile" : "target-stack-Debug-e9b00e5d1210c81d9f5a.json",
+					"name" : "stack",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug",
+		"source" : "C:/Users/hochmuch/CLionProjects/emulator2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
