@@ -16,3 +16,7 @@ const char *exceptions::ParserError::what() const noexcept {
 const char *exceptions::EmptyStackPopError::what() const noexcept {
     return "Trying to pop from empty stack!";
 }
+
+const char *exceptions::SerializerError::what() const noexcept {
+    return "Serializer error!!!";
+}

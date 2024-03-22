@@ -1,0 +1,2 @@
+add_library(serializer serializer.cpp)
+target_link_libraries(serializer parser)

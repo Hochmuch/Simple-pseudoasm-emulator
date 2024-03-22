@@ -12,5 +12,6 @@ add_subdirectory(preprocessor)
 add_subdirectory(commands)
 add_subdirectory(memory)
 add_subdirectory(exceptions)
+add_subdirectory(serializer)
 
-target_link_libraries(emulator2 PRIVATE preprocessor stack emulator commands memory exceptions)
+target_link_libraries(emulator2 PRIVATE preprocessor stack emulator commands memory exceptions serializer)

@@ -28,6 +28,11 @@ namespace exceptions {
     public:
         [[nodiscard]] const char *what() const noexcept override;
     };
+
+    class SerializerError : std::exception {
+    public:
+        [[nodiscard]] const char *what() const noexcept override;
+    };
 }
 
 #endif //EMULATOR2_EXCEPTIONS_H

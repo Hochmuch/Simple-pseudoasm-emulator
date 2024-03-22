@@ -2,6 +2,7 @@
 #define EMULATOR2_EMULATOR_H
 
 #include "../../preprocessor/include/preprocessor.h"
+#include "../../serializer/include/serializer.h"
 
 namespace emulator {
 
@@ -11,8 +12,10 @@ namespace emulator {
         preprocessing::Preprocessor preprocessor;
         std::vector<commands::Operation> program;
         memory::Memory memoblock;
+        serializing::Deserializer deserializer;
     public:
-        void execute(std::string &path);
+        void serialize(std::string &read_path, std::string &write_path);
+        void deserialize(std::string &serial_file);
     };
 
 }

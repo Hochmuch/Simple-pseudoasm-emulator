@@ -30,14 +30,12 @@ void commands::Pop::execute(const std::string &arg, memory::Memory &memoblock) {
 void commands::Pushr::execute(const std::string &arg, memory::Memory &memoblock) {
     abort_if_not_started(memoblock);
     memoblock.data_stack.push(memoblock.registers[memory::registers.at(arg)]);
-
 }
 
 void commands::Popr::execute(const std::string &arg, memory::Memory &memoblock) {
     abort_if_not_started(memoblock);
     memoblock.registers[memory::registers.at(arg)] = memoblock.data_stack.getTop();
     memoblock.data_stack.pop();
-    // КОНКРЕТНО
 }
 
 void commands::Add::execute(const std::string &arg, memory::Memory &memoblock) {

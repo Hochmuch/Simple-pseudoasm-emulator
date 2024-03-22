@@ -30,23 +30,26 @@ std::pair<std::string, std::string> parsing::Parser::parse_line(const std::strin
     return parsed_line;
 }
 
-parsing::CommandToken parsing::Parser::string_to_token(std::pair<std::string, std::string> string_data) {
-    parsing::OperationCode command = parsing::operation_codes[string_data.first];
+serializing::CommandToken parsing::Parser::string_to_token(std::pair<std::string, std::string> string_data) {
+    serializing::OperationCode command = parsing::operation_codes[string_data.first];
     std::string arg = string_data.second;
-    parsing::CommandToken result(command, arg);
+    serializing::CommandToken result(command, arg);
     return result;
 }
 
-std::vector<parsing::CommandToken> parsing::Parser::readfile(std::string &path) {
-    std::vector<parsing::CommandToken> parsed_file;
-    file = std::ifstream(path);
+void parsing::Parser::readfile(std::string &read_path, std::string &write_path) {
+    this->serializer = serializing::Serializer(write_path);
+    std::vector<serializing::CommandToken> parsed_file;
+    file = std::ifstream(read_path);
     std::string line;
     while (std::getline(file, line)) {
         std::pair<std::string, std::string> parsed_line = parse_line(line);
-        parsed_file.push_back(Parser::string_to_token(parsed_line));
+        serializer.exec(Parser::string_to_token(parsed_line));
+        //parsed_file.push_back(Parser::string_to_token(parsed_line));
     }
     file.close();
-    return parsed_file;
+    this->serializer.close();
+    //return parsed_file;
 }
 
 bool parsing::Parser::is_number(const std::string &s) {
@@ -57,49 +60,51 @@ bool parsing::Parser::is_number(const std::string &s) {
     return (count == s.size()) || (s[0] == '-' && count == s.size() - 1);
 }
 
-parsing::CommandToken::CommandToken(parsing::OperationCode command, std::string &operand) {
+serializing::CommandToken::CommandToken(serializing::OperationCode command, std::string &operand) {
     this->command = command;
     this->operand = operand;
 }
 
-std::unordered_map<parsing::OperationCode, std::shared_ptr<commands::Operation>> parsing::token_to_class =
+serializing::CommandToken::CommandToken() = default;
+
+std::unordered_map<serializing::OperationCode, std::shared_ptr<commands::Operation>> parsing::token_to_class =
         {
-                {parsing::OperationCode::PUSH,  std::make_shared<commands::Push>()},
-                {parsing::OperationCode::POP,   std::make_shared<commands::Pop>()},
-                {parsing::OperationCode::BEGIN, std::make_shared<commands::Begin>()},
-                {parsing::OperationCode::END,   std::make_shared<commands::End>()},
-                {parsing::OperationCode::PUSHR, std::make_shared<commands::Pushr>()},
-                {parsing::OperationCode::POPR,  std::make_shared<commands::Popr>()},
-                {parsing::OperationCode::ADD,   std::make_shared<commands::Add>()},
-                {parsing::OperationCode::SUB,   std::make_shared<commands::Sub>()},
-                {parsing::OperationCode::MUL,   std::make_shared<commands::Mul>()},
-                {parsing::OperationCode::DIV,   std::make_shared<commands::Div>()},
-                {parsing::OperationCode::OUT,   std::make_shared<commands::Out>()},
-                {parsing::OperationCode::IN,    std::make_shared<commands::In>()},
-                {parsing::OperationCode::LABEL, std::make_shared<commands::Label>()}
+                {serializing::OperationCode::PUSH,  std::make_shared<commands::Push>()},
+                {serializing::OperationCode::POP,   std::make_shared<commands::Pop>()},
+                {serializing::OperationCode::BEGIN, std::make_shared<commands::Begin>()},
+                {serializing::OperationCode::END,   std::make_shared<commands::End>()},
+                {serializing::OperationCode::PUSHR, std::make_shared<commands::Pushr>()},
+                {serializing::OperationCode::POPR,  std::make_shared<commands::Popr>()},
+                {serializing::OperationCode::ADD,   std::make_shared<commands::Add>()},
+                {serializing::OperationCode::SUB,   std::make_shared<commands::Sub>()},
+                {serializing::OperationCode::MUL,   std::make_shared<commands::Mul>()},
+                {serializing::OperationCode::DIV,   std::make_shared<commands::Div>()},
+                {serializing::OperationCode::OUT,   std::make_shared<commands::Out>()},
+                {serializing::OperationCode::IN,    std::make_shared<commands::In>()},
+                {serializing::OperationCode::LABEL, std::make_shared<commands::Label>()}
         };
 
-std::unordered_map<std::string, parsing::OperationCode> parsing::operation_codes = {
-        {"PUSH",  parsing::OperationCode::PUSH},
-        {"POP",   parsing::OperationCode::POP},
-        {"PUSHR", parsing::OperationCode::PUSHR},
-        {"POPR",  parsing::OperationCode::POPR},
-        {"ADD",   parsing::OperationCode::ADD},
-        {"SUB",   parsing::OperationCode::SUB},
-        {"MUL",   parsing::OperationCode::MUL},
-        {"DIV",   parsing::OperationCode::DIV},
-        {"OUT",   parsing::OperationCode::OUT},
-        {"IN",    parsing::OperationCode::IN},
-        {"BEGIN", parsing::OperationCode::BEGIN},
-        {"END",   parsing::OperationCode::END},
-        {"JMP",   parsing::OperationCode::JMP},
-        {"JEQ",   parsing::OperationCode::JEQ},
-        {"JNE",   parsing::OperationCode::JNE},
-        {"JA",    parsing::OperationCode::JA},
-        {"JAE",   parsing::OperationCode::JAE},
-        {"JB",    parsing::OperationCode::JB},
-        {"JBE",   parsing::OperationCode::JBE},
-        {"CALL",  parsing::OperationCode::CALL},
-        {"RET",   parsing::OperationCode::RET},
-        {"LABEL", parsing::OperationCode::LABEL}
+std::unordered_map<std::string, serializing::OperationCode> parsing::operation_codes = {
+        {"PUSH",  serializing::OperationCode::PUSH},
+        {"POP",   serializing::OperationCode::POP},
+        {"PUSHR", serializing::OperationCode::PUSHR},
+        {"POPR",  serializing::OperationCode::POPR},
+        {"ADD",   serializing::OperationCode::ADD},
+        {"SUB",   serializing::OperationCode::SUB},
+        {"MUL",   serializing::OperationCode::MUL},
+        {"DIV",   serializing::OperationCode::DIV},
+        {"OUT",   serializing::OperationCode::OUT},
+        {"IN",    serializing::OperationCode::IN},
+        {"BEGIN", serializing::OperationCode::BEGIN},
+        {"END",   serializing::OperationCode::END},
+        {"JMP",   serializing::OperationCode::JMP},
+        {"JEQ",   serializing::OperationCode::JEQ},
+        {"JNE",   serializing::OperationCode::JNE},
+        {"JA",    serializing::OperationCode::JA},
+        {"JAE",   serializing::OperationCode::JAE},
+        {"JB",    serializing::OperationCode::JB},
+        {"JBE",   serializing::OperationCode::JBE},
+        {"CALL",  serializing::OperationCode::CALL},
+        {"RET",   serializing::OperationCode::RET},
+        {"LABEL", serializing::OperationCode::LABEL}
 };

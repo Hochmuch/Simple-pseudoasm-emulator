@@ -47,7 +47,7 @@ cmake_ninja_workdir = C$:/Users/hochmuch/CLionProjects/emulator2/cmake-build-deb
 #############################################
 # Order-only phony target for emulator2
 
-build cmake_object_order_depends_target_emulator2: phony || cmake_object_order_depends_target_commands cmake_object_order_depends_target_emulator cmake_object_order_depends_target_exceptions cmake_object_order_depends_target_memory cmake_object_order_depends_target_parser cmake_object_order_depends_target_preprocessor stack/stack
+build cmake_object_order_depends_target_emulator2: phony || cmake_object_order_depends_target_commands cmake_object_order_depends_target_emulator cmake_object_order_depends_target_exceptions cmake_object_order_depends_target_memory cmake_object_order_depends_target_parser cmake_object_order_depends_target_preprocessor cmake_object_order_depends_target_serializer stack/stack
 
 build CMakeFiles/emulator2.dir/main.cpp.obj: CXX_COMPILER__emulator2_Debug C$:/Users/hochmuch/CLionProjects/emulator2/main.cpp || cmake_object_order_depends_target_emulator2
   DEP_FILE = CMakeFiles\emulator2.dir\main.cpp.obj.d
@@ -63,9 +63,9 @@ build CMakeFiles/emulator2.dir/main.cpp.obj: CXX_COMPILER__emulator2_Debug C$:/U
 #############################################
 # Link the executable emulator2.exe
 
-build emulator2.exe: CXX_EXECUTABLE_LINKER__emulator2_Debug CMakeFiles/emulator2.dir/main.cpp.obj | preprocessor/libpreprocessor.a emulator/libemulator.a commands/libcommands.a memory/libmemory.a exceptions/libexceptions.a preprocessor/libpreprocessor.a parser/libparser.a commands/libcommands.a memory/libmemory.a exceptions/libexceptions.a || commands/libcommands.a emulator/libemulator.a exceptions/libexceptions.a memory/libmemory.a parser/libparser.a preprocessor/libpreprocessor.a stack/stack
+build emulator2.exe: CXX_EXECUTABLE_LINKER__emulator2_Debug CMakeFiles/emulator2.dir/main.cpp.obj | preprocessor/libpreprocessor.a emulator/libemulator.a commands/libcommands.a memory/libmemory.a exceptions/libexceptions.a serializer/libserializer.a preprocessor/libpreprocessor.a parser/libparser.a commands/libcommands.a memory/libmemory.a exceptions/libexceptions.a || commands/libcommands.a emulator/libemulator.a exceptions/libexceptions.a memory/libmemory.a parser/libparser.a preprocessor/libpreprocessor.a serializer/libserializer.a stack/stack
   FLAGS = -g
-  LINK_LIBRARIES = preprocessor/libpreprocessor.a  emulator/libemulator.a  commands/libcommands.a  memory/libmemory.a  exceptions/libexceptions.a  preprocessor/libpreprocessor.a  parser/libparser.a  commands/libcommands.a  memory/libmemory.a  exceptions/libexceptions.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = preprocessor/libpreprocessor.a  emulator/libemulator.a  commands/libcommands.a  memory/libmemory.a  exceptions/libexceptions.a  serializer/libserializer.a  preprocessor/libpreprocessor.a  parser/libparser.a  commands/libcommands.a  memory/libmemory.a  exceptions/libexceptions.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\emulator2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -485,6 +485,65 @@ build exceptions/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build exceptions/rebuild_cache: phony exceptions/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/hochmuch/CLionProjects/emulator2/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target serializer
+
+
+#############################################
+# Order-only phony target for serializer
+
+build cmake_object_order_depends_target_serializer: phony || cmake_object_order_depends_target_commands cmake_object_order_depends_target_exceptions cmake_object_order_depends_target_memory cmake_object_order_depends_target_parser stack/stack
+
+build serializer/CMakeFiles/serializer.dir/serializer.cpp.obj: CXX_COMPILER__serializer_Debug C$:/Users/hochmuch/CLionProjects/emulator2/serializer/serializer.cpp || cmake_object_order_depends_target_serializer
+  DEP_FILE = serializer\CMakeFiles\serializer.dir\serializer.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = serializer\CMakeFiles\serializer.dir
+  OBJECT_FILE_DIR = serializer\CMakeFiles\serializer.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target serializer
+
+
+#############################################
+# Link the static library serializer\libserializer.a
+
+build serializer/libserializer.a: CXX_STATIC_LIBRARY_LINKER__serializer_Debug serializer/CMakeFiles/serializer.dir/serializer.cpp.obj || commands/libcommands.a exceptions/libexceptions.a memory/libmemory.a parser/libparser.a stack/stack
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = serializer\CMakeFiles\serializer.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = serializer\libserializer.a
+  TARGET_PDB = serializer.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build serializer/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\hochmuch\CLionProjects\emulator2\cmake-build-debug\serializer && "C:\Program Files\JetBrains\CLion 2023.1.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build serializer/edit_cache: phony serializer/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build serializer/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\Users\hochmuch\CLionProjects\emulator2\cmake-build-debug\serializer && "C:\Program Files\JetBrains\CLion 2023.1.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\hochmuch\CLionProjects\emulator2 -BC:\Users\hochmuch\CLionProjects\emulator2\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build serializer/rebuild_cache: phony serializer/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build commands: phony commands/libcommands.a
@@ -507,11 +566,15 @@ build libparser.a: phony parser/libparser.a
 
 build libpreprocessor.a: phony preprocessor/libpreprocessor.a
 
+build libserializer.a: phony serializer/libserializer.a
+
 build memory: phony memory/libmemory.a
 
 build parser: phony parser/libparser.a
 
 build preprocessor: phony preprocessor/libpreprocessor.a
+
+build serializer: phony serializer/libserializer.a
 
 build stack: phony stack/stack
 
@@ -523,7 +586,7 @@ build stack: phony stack/stack
 #############################################
 # Folder: C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug
 
-build all: phony emulator2.exe stack/all emulator/all parser/all preprocessor/all commands/all memory/all exceptions/all
+build all: phony emulator2.exe stack/all emulator/all parser/all preprocessor/all commands/all memory/all exceptions/all serializer/all
 
 # =============================================================================
 
@@ -570,6 +633,13 @@ build preprocessor/all: phony preprocessor/libpreprocessor.a
 # =============================================================================
 
 #############################################
+# Folder: C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/serializer
+
+build serializer/all: phony serializer/libserializer.a
+
+# =============================================================================
+
+#############################################
 # Folder: C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/stack
 
 build stack/all: phony stack/stack
@@ -581,14 +651,14 @@ build stack/all: phony stack/stack
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/hochmuch/CLionProjects/emulator2/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/commands/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/emulator/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/exceptions/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/memory/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/parser/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/preprocessor/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/stack/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/hochmuch/CLionProjects/emulator2/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/commands/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/emulator/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/exceptions/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/memory/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/parser/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/preprocessor/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/serializer/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/stack/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/hochmuch/CLionProjects/emulator2/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/commands/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/emulator/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/exceptions/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/memory/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/parser/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/preprocessor/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/stack/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.4/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake C$:/Users/hochmuch/CLionProjects/emulator2/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/commands/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/emulator/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/exceptions/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/memory/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/parser/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/preprocessor/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/serializer/CMakeLists.txt C$:/Users/hochmuch/CLionProjects/emulator2/stack/CMakeLists.txt CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake: phony
 
 
 #############################################

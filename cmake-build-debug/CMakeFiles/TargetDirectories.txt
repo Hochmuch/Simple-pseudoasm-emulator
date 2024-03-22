@@ -22,3 +22,6 @@ C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/memory/CMakeFiles/re
 C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/exceptions/CMakeFiles/exceptions.dir
 C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/exceptions/CMakeFiles/edit_cache.dir
 C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/exceptions/CMakeFiles/rebuild_cache.dir
+C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/serializer/CMakeFiles/serializer.dir
+C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/serializer/CMakeFiles/edit_cache.dir
+C:/Users/hochmuch/CLionProjects/emulator2/cmake-build-debug/serializer/CMakeFiles/rebuild_cache.dir
